@@ -36,15 +36,15 @@ public class EmployeeTest {
 //        assertThrows(ClassNotFoundException.class, () -> employee.getDepartment2());
 //    }
 
-    @Test
-    void testGetOsName() throws IOException {
-        Process process;
-        System.out.println(System.getProperty("os.name"));
-        process = Runtime.getRuntime().exec("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --version");
-        //System.out.println(Arrays.toString(process.info().arguments().get()));
-        //String str = new BufferedReader(new InputStreamReader(process.getInputStream())).readLine();
-        String str = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-        System.out.println(str);
-
-    }
+//    @Test
+//    void testGetOsName() throws IOException {
+//        Process process;
+//        System.out.println(System.getProperty("os.name"));
+//        process = Runtime.getRuntime().exec("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --version");
+//        //System.out.println(Arrays.toString(process.info().arguments().get()));
+//        //String str = new BufferedReader(new InputStreamReader(process.getInputStream())).readLine();
+//        String str = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+//        System.out.println(str);
+//
+//    }
 }
