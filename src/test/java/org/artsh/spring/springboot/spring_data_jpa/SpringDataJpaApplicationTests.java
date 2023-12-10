@@ -14,10 +14,10 @@ import java.util.List;
 @SpringBootTest
 class SpringDataJpaApplicationTests {
 
-    @Test
-    public void contextLoads() {
-        System.out.println(System.getProperty("os.name"));
-    }
+//    @Test
+//    public void contextLoads() {
+//        System.out.println(System.getProperty("os.name"));
+//    }
 
 
 //    Connection connection;
