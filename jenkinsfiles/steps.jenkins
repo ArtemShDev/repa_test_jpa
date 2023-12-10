@@ -4,8 +4,8 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent {
-        any
-        }
+        label "${PLATFORM}-agent"
+          }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
