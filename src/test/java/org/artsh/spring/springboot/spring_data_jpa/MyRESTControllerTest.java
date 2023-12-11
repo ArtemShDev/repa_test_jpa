@@ -122,6 +122,9 @@ public class MyRESTControllerTest {
     void showRandomTest_Success() throws Exception {
         Employee emp1 = new Employee("Art", "Shmelev", 500);
         Employee emp2 = new Employee("Anton", "Shmonov", 600);
+        Employee emp3 = Mockito.mock(Employee.class);
+        Assertions.assertEquals(0, emp3.getSalary());
+        Assertions.assertNull(emp3.getSurname());
         Mockito.when(employeeService.getRandom("Shm", 200)).thenReturn(List.of(emp1, emp2));
         mockMvc
                 .perform(get("/api/employees/random")
@@ -167,17 +170,7 @@ public class MyRESTControllerTest {
     @DisplayName("Name of test: 'updateEmployeeTest'")
     //@ParameterizedTest(name = "{default_display_name}")
     @Test
-    void updateEmployeeTest() throws Exception {
-//        Employee emp = new Employee("Art", "Kamorov", 300);
-//        mockMvc
-//                .perform(put("/api/employees")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(objectMapper.writeValueAsString(emp)))
-//                .andExpect(status().is2xxSuccessful())
-//                .andExpect(jsonPath("$.name").value("Art"))
-//                .andExpect(jsonPath("$.surname").value("Kamorov"))
-//                .andExpect(jsonPath("$.salary").value(300));
-//        Mockito.verify(employeeService, Mockito.times(1)).saveEmployee(emp);
+    void updateEmployeeTest() {
         Allure.step("Проверка Rest-контроллера: операция 'updateEmployee(@RequestBody Employee employee)'",
                 () -> {
                     Employee emp = new Employee("Art", "Kamorov", 300);
